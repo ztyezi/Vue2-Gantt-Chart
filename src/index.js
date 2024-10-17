@@ -3,7 +3,7 @@ import gantt from "./gantt.vue";
 gantt.version = "__VERSION__";
 gantt.install = function(Vue) {
   //     // 将其注册为vue的组件，'gantt'是组件名
-  Vue.component("v-gantt-chart", gantt);
+  Vue.component("v2-gantt-chart", gantt);
 };
 // 新增
 if (typeof window !== "undefined" && window.Vue) {
