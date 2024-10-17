@@ -1,33 +1,33 @@
 {
-  "name": "v-gantt-chart",
+  "name": "v2-gantt-chart",
   "version": "1.6.3",
   "description": "display gantt-like vaule,like use this to order bus schedule.",
-  "main": "dist/v-gantt-chart.umd.min.js",
+  "main": "dist/v2-gantt-chart.umd.min.js",
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w1301625107/Vue-Gantt-chart.git"
+    "url": "git+https://github.com/ztyezi/Vue2-Gantt-Chart.git"
   },
   "bugs": {
-    "url": "https://github.com/w1301625107/Vue-Gantt-chart/issues"
+    "url": "https://github.com/ztyezi/Vue2-Gantt-Chart/issues"
   },
-  "homepage": "https://github.com/w1301625107/Vue-Gantt-chart#readme",
+  "homepage": "https://github.com/ztyezi/Vue2-Gantt-Chart#readme",
   "keywords": [
-    "vue-gantt-chart",
+    "vue2-gantt-chart",
     "gantt",
     "gantt-chart",
-    "v-gantt-chart"
+    "v2-gantt-chart"
   ],
-  "author": "wuchouchou",
+  "author": "ztyezi",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run lint --fix && NODE_ENV=DEMO vue-cli-service build ",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "libbuild": "npm run lint  --fix && vue-cli-service build --target lib --name v-gantt-chart src/index.js"
+    "libbuild": "npm run lint  --fix && vue-cli-service build --target lib --name v2-gantt-chart src/index.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
