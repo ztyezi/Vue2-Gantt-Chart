@@ -62,6 +62,10 @@ $font-gray:#777;
       }
     }
 
+    &-block {
+      border-left: 1px solid #f0f0f0;
+    }
+
     // 隐藏第一个时间节点，不然会只显示一半，不好看
     &-block:first-child &-scale div:first-child {
       visibility: hidden;
@@ -84,7 +88,9 @@ $font-gray:#777;
       z-index: 100;
     }
 
-    &-item {}
+    &-item {
+      border-bottom: 1px solid #f0f0f0;
+    }
 
     &-defalutItem {
       width: 100%;
@@ -115,6 +121,8 @@ $font-gray:#777;
       float: left;
       color: #fff;
       font-size: 0.7rem;
+      max-width: 300px;
+      white-space:nowrap;
     }
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "v2-gantt-chart",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "display gantt-like vaule,like use this to order bus schedule.",
   "main": "dist/v2-gantt-chart.umd.min.js",
   "files": [

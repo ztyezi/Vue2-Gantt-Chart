@@ -57,7 +57,15 @@ export default {
           class="gantt-markline-label"
           style={{ "background-color": timeConfig.color || "#0ca30a" }}
         >
-          {dayjs(timeConfig.time).format("HH:mm:ss")}
+          <div
+            style={{
+              "font-weight": "bold",
+              display: timeConfig.text ? "" : "none"
+            }}
+          >
+            里程碑：
+          </div>
+          {dayjs(timeConfig.time).format("MM-DD HH:mm:ss")} {timeConfig.text}
         </div>
       </div>
     ) : (

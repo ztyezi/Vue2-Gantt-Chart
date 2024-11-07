@@ -6,9 +6,9 @@
     ></div>
     <div
       class="gantt-leftbar-item"
-      :style="cellHeightStyle"
       v-for="(data, index) in showDatas"
       :key="dataKey ? data[dataKey] : index"
+      :style="cellHeightStyle(data)"
     >
       <slot :data="data">
         <div class="gantt-leftbar-defalutItem">need slot</div>
@@ -31,8 +31,16 @@ export default {
   },
   computed: {
     cellHeightStyle() {
-      return {
-        height: `${this.cellHeight}px`
+      return function(data) {
+        let height = 0;
+        if (data.cellHeight > 0) {
+          height = data.cellHeight;
+        } else {
+          height = this.cellHeight;
+        }
+        return {
+          height: `${height}px`
+        };
       };
     }
   }

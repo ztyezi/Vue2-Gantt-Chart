@@ -384,7 +384,16 @@ export default {
     },
     totalHeight() {
       const { datas, cellHeight } = this;
-      return datas.length * cellHeight;
+      let totalHeight = 0;
+      datas.forEach((data) => {
+        if (data.cellHeight > 0) {
+          totalHeight += data.cellHeight;
+        } else {
+          totalHeight += cellHeight;
+        }
+      });
+      // return datas.length * cellHeight;
+      return totalHeight;
     },
     beginTimeOfTimeLine() {
       const value = getBeginTimeOfTimeLine(this.start, this.scale);
@@ -650,5 +659,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./gantt.scss";
+@use "./gantt.scss";
 </style>

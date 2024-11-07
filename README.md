@@ -504,6 +504,9 @@ yarn serve
 
 
 ## Update
+1.6.7
+- 支持单独设置一行的高度，如果data中包含cellHeight，则覆盖全局的cellHeight
+
 1.6.1
 - markline slot 字段调整
 

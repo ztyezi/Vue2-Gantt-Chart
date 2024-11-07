@@ -36,7 +36,16 @@ const dynamicRender = {
   computed: {
     blockHeight() {
       const { datas, cellHeight } = this;
-      return datas.length * cellHeight;
+      let totalHeight = 0;
+      datas.forEach((data) => {
+        if (data.cellHeight > 0) {
+          totalHeight += data.cellHeight;
+        } else {
+          totalHeight += cellHeight;
+        }
+      });
+      // return datas.length * cellHeight;
+      return totalHeight;
     },
     //计算当前屏幕显示的第一行数据的index
     currentTopIndex() {
@@ -45,9 +54,10 @@ const dynamicRender = {
         datas.length * cellHeight - heightOfBlocksWrapper;
       if (cellHeight > 0 && availableScrollTop < scrollTop) {
         /*eslint no-console: "warn"*/
-        console.warn(
-          `错误的scrollTop值 ${scrollTop},可用滚动高度为${availableScrollTop}，代码自动矫正`
-        );
+        // eslint-disable-next-line no-console
+        // console.warn(
+        //   `错误的scrollTop值 ${scrollTop},可用滚动高度为${availableScrollTop}，代码自动矫正`
+        // );
         return Math.ceil(availableScrollTop / cellHeight);
       }
       return Math.ceil(scrollTop / cellHeight);

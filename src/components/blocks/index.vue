@@ -6,9 +6,9 @@
     ></div>
     <div
       class="gantt-block"
-      :style="{ height: `${cellHeight}px` }"
       v-for="(data, index) in showDatas"
       :key="dataKey ? data[dataKey] : index"
+      :style="blockStyle(data)"
     >
       <template v-if="!customGenerateBlocks">
         <template v-for="(item, index) in concatArray(data)">
@@ -89,8 +89,22 @@ export default {
     },
     blocksStyle() {
       return {
-        backgroundSize: `${this.cellWidth}px ${this.cellHeight}px`,
+        backgroundSize: `${this.cellWidth}px`,
         height: `${this.blockHeight}px`
+      };
+    },
+    blockStyle() {
+      return function(data) {
+        let height = 0;
+        if (data.cellHeight > 0) {
+          height = data.cellHeight;
+        } else {
+          height = this.cellHeight;
+        }
+        return {
+          height: `${height}px`,
+          border: "1px solid #f0f0f0"
+        };
       };
     },
     precondition() {
